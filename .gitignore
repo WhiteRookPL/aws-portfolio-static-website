@@ -1,0 +1,16 @@
+# Logs and not important elements:
+*.log
+
+# Dependency directories:
+node_modules/
+
+# Optional `npm` / Node.js elements:
+.npm/
+.node_repl_history
+
+# Optional `ESLint` cache:
+.eslintcache/
+
+# Other caches and generated stuff:
+.cache/
+public/

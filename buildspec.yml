@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - npm install --global gatsby-cli
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 sync "public/" "s3://${DESTINATION_S3_BUCKET}" --delete --acl "public-read"
+artifacts:
+  base-directory: public
+  files:
+    - "**/*"

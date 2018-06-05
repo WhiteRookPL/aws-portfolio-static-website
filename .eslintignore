@@ -1,0 +1,9 @@
+# Dependency directories:
+node_modules/
+
+# Optional `npm` / Node.js elements:
+.npm/
+
+# Other caches and generated stuff:
+.cache/
+public/
