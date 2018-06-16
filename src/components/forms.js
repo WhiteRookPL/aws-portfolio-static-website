@@ -191,6 +191,7 @@ export class ContactForm extends React.Component {
 
     const payload = {
       from: this.props.siteUrl,
+      data
     };
 
     const options = {

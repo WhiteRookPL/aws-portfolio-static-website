@@ -35,7 +35,11 @@ exports.onCreateNode = ({ getNode, boundActionCreators, node }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const fileName = path.basename(node.fileAbsolutePath, `.md`);
-    const basePath = _.last(path.dirname(node.fileAbsolutePath).split(path.sep));
+
+    // It looks like on Windows, Gatsby also uses `/`,
+    // so we should not use `path.sep` constant.
+    const basePath = _.last(path.dirname(node.fileAbsolutePath).split("/"));
+
     const slug = createSlug({ basePath, fileName, node, getNode });
 
     createNodeField({ node, name: `slug`, value: slug });
